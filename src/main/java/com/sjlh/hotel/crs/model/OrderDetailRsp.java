@@ -1,6 +1,7 @@
 package com.sjlh.hotel.crs.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,6 +14,7 @@ import java.util.List;
  */
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class OrderDetailRsp extends CrsBaseResult {
 
     private String hotelCode;
