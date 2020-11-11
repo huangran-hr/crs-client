@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Import;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-@EnableConfigurationProperties
+@EnableConfigurationProperties({SpringCrsConfiguration.class})
 @Import({CrsConfiguration.class, CommonRegister.class})
 public @interface EnableCrsOrderClient {
 }
