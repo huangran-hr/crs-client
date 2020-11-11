@@ -9,7 +9,7 @@ buildscript {
 plugins {
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
-	id 'maven-publish'
+	id 'maven-publish' //maven发布插件
 }
 
 ext {
@@ -54,5 +54,27 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+//jar包发布到 nexus mavn仓库
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			//https://nexus.mvmyun.com/repository/releases/
+			//https://nexus.mvmyun.com/repository/snapshots/
+			from components.java
+		}
+	}
+	repositories {
+		maven {
+			def releasesRepoUrl = "https://nexus.mvmyun.com/repository/maven-releases/"
+			def snapshotsRepoUrl = "https://nexus.mvmyun.com/repository/maven-snapshots/"
+			url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+			credentials {
+				username = "admin"
+				password = 'admin123'
+			}
+		}
+	}
 }
 
