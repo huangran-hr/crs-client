@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
  * @author Administrator
  *
  */
-@Component
 @Data
 @ConfigurationProperties(prefix = "crs")
 public class SpringCrsConfiguration{
