@@ -56,6 +56,11 @@ test {
 	useJUnitPlatform()
 }
 
+// java 源码
+java {
+    withSourcesJar()
+}
+
 //jar包发布到 nexus mavn仓库
 publishing {
 	publications {
