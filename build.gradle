@@ -67,6 +67,7 @@ dependencies {
 	implementation 'com.sjlh.hotel:rpc:0.0.2'
 	implementation 'com.sjlh.hotel:rpc-spring:0.0.2'
 	compileOnly 'org.projectlombok:lombok:1.18.12'
+	compileOnly 'org.springframework.boot:spring-boot-autoconfigure'
 	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
