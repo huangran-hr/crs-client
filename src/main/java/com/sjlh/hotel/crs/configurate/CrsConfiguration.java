@@ -26,6 +26,7 @@ public class CrsConfiguration {
 	}
 
 	@Bean
+	@ConditionalOnMissingBean(ObjectMapper.class)
 	@Primary
 	public ObjectMapper getObjectMapper() {
 		ObjectMapper objectMapper = new ObjectMapper();
